@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+/* Enhanced Liquid Glass specification with deep glassmorphism for scroll frames */
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.42);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.12) 80%, rgba(255,255,255,0.35) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Futuristic Animation Engine */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.45);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes equalizerWave {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 18s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 14s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-eq-1 { animation: equalizerWave 1.2s ease-in-out infinite; }
+.animate-eq-2 { animation: equalizerWave 0.8s ease-in-out 0.2s infinite; }
+.animate-eq-3 { animation: equalizerWave 1.5s ease-in-out 0.4s infinite; }
+.animate-eq-4 { animation: equalizerWave 1.0s ease-in-out 0.1s infinite; }
+.animate-eq-5 { animation: equalizerWave 1.3s ease-in-out 0.3s infinite; }
