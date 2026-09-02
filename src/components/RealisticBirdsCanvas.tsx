@@ -270,6 +270,8 @@ export const RealisticBirdsCanvas: React.FC = () => {
         if (mouseActive) {
           const dy = mouseY * 0.55 + height * 0.12 + (d.id === 1 ? -20 : 35) - d.y;
           d.targetY += dy * 0.008;
+          const dx = mouseX - d.x;
+          d.vx = Math.max(1.6, Math.min(3.4, (d.id === 1 ? 2.5 : 2.1) + Math.sign(dx) * 0.3));
         } else {
           d.targetY = height * (d.id === 1 ? 0.26 : 0.38) + hoverWave;
         }
