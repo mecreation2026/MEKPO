@@ -108,7 +108,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenHireModal, onOpenSqlViewer
                   Infrastructure
                 </h4>
                 <ul className="space-y-2.5 text-sm text-gray-300">
-                
+                  {/* <li>
+                    <button
+                      onClick={onOpenSqlViewer}
+                      className="hover:text-white transition-colors flex items-center gap-1 text-left cursor-pointer text-gray-300 hover:underline"
+                    >
+                      Supabase DB Schema <ArrowUpRight size={13} />
+                    </button>
+                  </li> */}
                   <li>
                     <span className="text-gray-300 text-xs flex items-center gap-1.5">
                       <Globe size={12} /> Custom Domain & Hosting
