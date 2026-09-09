@@ -1,17 +1,19 @@
 import React from 'react';
-import { Mail, ArrowUpRight, Shield, Globe, Terminal, Sparkles } from 'lucide-react';
+import { Mail, Shield, Globe, Terminal, Sparkles } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
 interface FooterProps {
   onOpenHireModal: () => void;
-  onOpenSqlViewer: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenHireModal, onOpenSqlViewer }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenHireModal }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="advisory" className="relative z-10 bg-transparent text-white pt-24 pb-12 px-6 md:px-12 lg:px-16">
+    <footer
+      id="advisory"
+      className="relative z-10 bg-transparent text-white pt-24 pb-12 px-6 md:px-12 lg:px-16"
+    >
       <div className="max-w-7xl mx-auto">
         
         {/* Top Call to Action Banner */}
